@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            fresco:roundAsCircle="true"
+            android:id="@+id/headImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            fresco:placeholderImage="@drawable/app_default"
+            fresco:placeholderImageScaleType="fitCenter"
+            fresco:actualImageScaleType="fitCenter"
+            fresco:failureImage="@drawable/load_error_image"
+            fresco:failureImageScaleType="fitCenter" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="name"
+                android:id="@+id/name"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#8d99d9"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"/>
+            <TextView
+                android:text="time"
+                android:id="@+id/time"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textColor="#e2dfdf"
+                android:layout_height="0dp"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+
+        <!--<ImageView-->
+            <!--android:src="@drawable/add_icon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+    </LinearLayout>
+
+    <TextView
+        android:text="标题"
+        android:id="@+id/biaoti"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="fill_vertical"
+        android:layout_gravity="center_horizontal"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/draweeView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        fresco:placeholderImage="@drawable/app_default"
+        fresco:placeholderImageScaleType="fitXY"
+        fresco:actualImageScaleType="fitXY"
+        fresco:failureImage="@drawable/load_error_image"
+        fresco:failureImageScaleType="fitXY" />
+</LinearLayout>
