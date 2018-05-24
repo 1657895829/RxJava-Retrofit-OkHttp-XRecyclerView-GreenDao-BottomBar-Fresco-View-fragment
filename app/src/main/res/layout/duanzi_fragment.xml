@@ -39,10 +39,10 @@
          android:layout_height="38dp" />
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/relative" >
-    </android.support.v7.widget.RecyclerView>
+    </com.jcodecraeer.xrecyclerview.XRecyclerView>
 </RelativeLayout>

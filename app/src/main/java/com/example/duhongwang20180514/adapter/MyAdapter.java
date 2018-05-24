@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.duhongwang20180514.R;
-import com.example.duhongwang20180514.bean.NewsBean;
+import com.example.duhongwang20180514.bean.DataBean;
+import com.example.duhongwang20180514.bean.UserBean;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
 import butterknife.BindView;
@@ -20,15 +21,15 @@ import butterknife.ButterKnife;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context context;
-    private List<NewsBean.DataBean> list;
+    private List<DataBean> list;
 
-    public MyAdapter(Context context , List<NewsBean.DataBean> list) {
+    public MyAdapter(Context context , List<DataBean> list ) {
         this.context = context;
         this.list = list;
     }
 
     //添加数据的方法
-    public void addData(List<NewsBean.DataBean> data) {
+    public void addData(List<DataBean> data) {
         if (list != null) {
             list.clear();
             list.addAll(data);
@@ -48,9 +49,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         //设置参数数据
         holder.title.setText(list.get(position).getContent());
-        holder.name.setText(list.get(position).getUser().getNickname());
+        holder.name.setText(list.get(position).getJid()+"");
         holder.time.setText(list.get(position).getCreateTime());
-        holder.headImage.setImageURI(list.get(position).getUser().getIcon());
+        holder.headImage.setImageURI(list.get(position).getImgUrls());
         holder.draweeView.setImageURI( (String) list.get(position).getImgUrls() );
     }
 
@@ -58,7 +59,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public int getItemCount() {
         return list == null ? 0 : list.size();
     }
-
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.headImage)
@@ -77,4 +77,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             ButterKnife.bind(this, itemView);
         }
     }
+
 }

@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.facebook.drawee.view.SimpleDraweeView
+            android:padding="6dp"
             fresco:roundAsCircle="true"
             android:id="@+id/headImage"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
             fresco:placeholderImage="@drawable/app_default"
             fresco:placeholderImageScaleType="fitCenter"
             fresco:actualImageScaleType="fitCenter"
@@ -23,10 +24,12 @@
             fresco:failureImageScaleType="fitCenter" />
 
         <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_alignBottom="@+id/headImage"
+            android:layout_toRightOf="@+id/headImage"
             android:orientation="vertical"
-            android:layout_marginLeft="@dimen/margin_10dp"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <TextView
                 android:text="name"
                 android:id="@+id/name"
@@ -44,24 +47,29 @@
                 android:textSize="13sp"
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:textColor="#e2dfdf"
+                android:textColor="#807979"
                 android:layout_height="0dp"
                 android:layout_width="wrap_content"
                 android:gravity="center_vertical"/>
         </LinearLayout>
 
-        <!--<ImageView-->
-            <!--android:src="@drawable/add_icon"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
+        <com.example.duhongwang20180514.custom.CustomAddView
+            android:layout_marginRight="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
 
-    </LinearLayout>
+        </com.example.duhongwang20180514.custom.CustomAddView>
+
+    </RelativeLayout>
 
     <TextView
         android:text="标题"
         android:id="@+id/biaoti"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:layout_marginLeft="6dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
